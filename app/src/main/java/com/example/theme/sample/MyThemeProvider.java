@@ -35,7 +35,7 @@ public class MyThemeProvider extends ThemeProvider {
 	/**
 	 * The list of theme ids in this package.
 	 */
-	public static final String[] THEME_IDS = { "sample" };
+	public static final String[] THEME_IDS = { "marin-kitagawa" };
 
 	/**
 	 * 
@@ -78,14 +78,18 @@ public class MyThemeProvider extends ThemeProvider {
 	 * @param folder - FOLDER_IMAGES, FOLDER_DYNAMIC_IMAGES, FOLDER_SHAPES, FOLDER_SHADOWS, FOLDER_FONTS or FOLDER_SOUNDS
 	 * @return True if the resources folder is not empty.
 	 */
-	@Override
-	protected boolean hasResources(String themeId, String folder) {
-		if (folder.equals(FOLDER_DYNAMIC_IMAGES) ||
-				folder.equals(FOLDER_FONTS) || folder.equals(FOLDER_SOUNDS)) {
-			return true;
-		}
-		return false;
-	}
+@Override
+protected boolean hasResources(String themeId, String folder) {
+        if (folder.equals(FOLDER_IMAGES) ||
+                        folder.equals(FOLDER_DYNAMIC_IMAGES) ||
+                        folder.equals(FOLDER_SHAPES) ||
+                        folder.equals(FOLDER_SHADOWS) ||
+                        folder.equals(FOLDER_FONTS) ||
+                        folder.equals(FOLDER_SOUNDS)) {
+                return true;
+        }
+        return false;
+}
 
 	/**
 	 * 
