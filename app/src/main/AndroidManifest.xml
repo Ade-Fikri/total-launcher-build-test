@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <queries>
+        <package android:name="com.ss.launcher2" />
+    </queries>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.ss.launcher2.theme.GET_RESOURCES">
+                    <!-- this action must be added to make this package resources accessible in TL -->
+                </action>
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.ss.launcher2.theme">
+                    <!-- this category must be added to make this package resources accessible in TL -->
+                </category>
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".MyThemeProvider"
+            android:authorities="com.example.theme.sample"
+            android:exported="true" >
+
+            <!-- use your package name for authorities -->
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 34
+        versionCode 5
+        versionName "4.0"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    output.outputFileName = new File("ThemeSampleStandAlone.apk")
+                }
+            }
+        }
+    }
+    lint {
+        disable 'MissingTranslation'
+    }
+    namespace 'com.example.theme.sample'
+}
+
+dependencies {
+}
