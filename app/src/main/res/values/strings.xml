@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">Sample theme for TL</string>
-    <string name="label">Sample</string>
+    <string name="app_name">Marin Kitagawa - qii</string>
+    <string name="label">Marin Kitagawa</string>
     <string name="apply">Apply</string>
     <string name="not_installed">Not installed</string>
     <string name="install_total">Total launcher is not installed or too low version to apply this theme. Install/update it?</string>
