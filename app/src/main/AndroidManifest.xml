@@ -29,7 +29,7 @@
 
         <provider
             android:name=".MyThemeProvider"
-            android:authorities="com.example.theme.sample"
+            android:authorities="com.qii.marinkitagawa"
             android:exported="true" >
 
             <!-- use your package name for authorities -->
