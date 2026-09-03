@@ -42,20 +42,34 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Fullscreen: hide status bar before loading the layout
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-        );
+        // Fullscreen immersive layout
+        if (android.os.Build.VERSION.SDK_INT >= 30) {
+            getWindow().setDecorFitsSystemWindows(false);
 
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        );
+            getWindow().getInsetsController().hide(
+                    android.view.WindowInsets.Type.statusBars()
+                            | android.view.WindowInsets.Type.navigationBars()
+            );
+
+            getWindow().getInsetsController().setSystemBarsBehavior(
+                    android.view.WindowInsetsController
+                            .BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            );
+        } else {
+            getWindow().setFlags(
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN
+            );
+
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            );
+        }
 
         setContentView(R.layout.activity_main);
 
@@ -88,10 +102,12 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(Constants.ACTION_APPLY_THEME);
         intent.setComponent(Constants.COMPONENT_NAME);
+
         intent.putExtra(
                 Constants.EXTRA_THEME_PACKAGE,
                 getPackageName()
         );
+
         intent.putExtra(
                 Constants.EXTRA_THEME_ID,
                 MyThemeProvider.THEME_IDS[0]
@@ -114,14 +130,16 @@ public class MainActivity extends Activity {
 
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
+
             intent.setComponent(
                     ComponentName.unflattenFromString(
                             "com.ss.launcher2/.MainActivity"
                     )
             );
+
             intent.setFlags(
                     Intent.FLAG_ACTIVITY_NEW_TASK
-                    | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
+                            | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
             );
 
             startActivity(intent);
@@ -145,7 +163,8 @@ public class MainActivity extends Activity {
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder b = new AlertDialog.Builder(getActivity());
+            AlertDialog.Builder b =
+                    new AlertDialog.Builder(getActivity());
 
             b.setTitle(R.string.not_installed)
                     .setMessage(R.string.install_total);
