@@ -68,8 +68,7 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:textAllCaps="false"
-            android:fontFamily="sans"
-            android:textAllCaps="false" />
+            android:fontFamily="sans" />
 
     </LinearLayout>
 
