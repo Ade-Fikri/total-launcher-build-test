@@ -41,9 +41,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+    
+        getWindow().setStatusBarColor(
+                getResources().getColor(R.color.theme_background)
+        );
+    
+        getWindow().getDecorView().setSystemUiVisibility(0);
+    
         Button applyButton = (Button) findViewById(R.id.applyButton);
-
+    
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
