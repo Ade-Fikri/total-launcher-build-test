@@ -40,7 +40,6 @@ public class MainActivity extends Activity {
       @Override
       protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
-          setContentView(R.layout.activity_main);
       
           getWindow().getDecorView().setSystemUiVisibility(
                   View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -50,6 +49,8 @@ public class MainActivity extends Activity {
                   | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                   | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
           );
+      
+          setContentView(R.layout.activity_main);
       
           Button applyButton = (Button) findViewById(R.id.applyButton);
       
