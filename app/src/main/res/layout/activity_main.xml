@@ -38,21 +38,32 @@
             android:lineSpacingExtra="3dp"
             android:fontFamily="sans" />
 
-        <ImageView
-            android:id="@+id/imageView1"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/preview_p" />
+            android:background="@drawable/preview_frame"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@drawable/preview_clip"
+                android:clipToOutline="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/preview_p" />
+
+        </FrameLayout>
 
         <Button
             android:id="@+id/applyButton"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="58dp"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/apply_button"
             android:text="@string/apply"
             android:textColor="@color/theme_button_text"
