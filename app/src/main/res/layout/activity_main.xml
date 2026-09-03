@@ -44,17 +44,14 @@
             android:layout_weight="1"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/preview_frame"
-            android:padding="2dp">
+            android:layout_gravity="center_horizontal">
 
             <ImageView
                 android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:background="@drawable/preview_clip"
-                android:clipToOutline="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/preview_p" />
 
@@ -71,7 +68,8 @@
             android:textSize="17sp"
             android:textStyle="bold"
             android:textAllCaps="false"
-            android:fontFamily="sans" />
+            android:fontFamily="sans"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

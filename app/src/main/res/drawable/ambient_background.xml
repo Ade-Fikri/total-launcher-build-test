@@ -10,16 +10,14 @@
 
     <item>
         <shape android:shape="rectangle">
-
             <gradient
                 android:type="radial"
                 android:centerX="50%"
-                android:centerY="18%"
-                android:gradientRadius="420dp"
-                android:startColor="#55EDC277"
-                android:centerColor="#20EDC277"
+                android:centerY="20%"
+                android:gradientRadius="520dp"
+                android:startColor="#70DEA942"
+                android:centerColor="#35DEA942"
                 android:endColor="#0015110E" />
-
         </shape>
     </item>
 
