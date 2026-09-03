@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/imageView1"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ambient_background">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/preview_p" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="28dp">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/theme_accent"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:fontFamily="sans" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:gravity="center"
+            android:text="@string/description"
+            android:textColor="@color/theme_text"
+            android:textSize="16sp"
+            android:lineSpacingExtra="3dp"
+            android:fontFamily="sans" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="26dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/preview_p" />
+
+        <Button
+            android:id="@+id/applyButton"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/apply_button"
+            android:text="@string/apply"
+            android:textColor="@color/theme_button_text"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:fontFamily="sans" />
+
+    </LinearLayout>
+
+</FrameLayout>

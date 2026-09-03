@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="theme_accent">#EDC277</color>
+    <color name="theme_background">#151411</color>
+    <color name="theme_text">#E8E4DD</color>
+    <color name="theme_button_text">#2A2114</color>
+
+</resources>
