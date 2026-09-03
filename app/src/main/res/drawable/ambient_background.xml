@@ -13,10 +13,10 @@
             <gradient
                 android:type="radial"
                 android:centerX="50%"
-                android:centerY="20%"
-                android:gradientRadius="520dp"
-                android:startColor="#70DEA942"
-                android:centerColor="#35DEA942"
+                android:centerY="25%"
+                android:gradientRadius="500dp"
+                android:startColor="#45DEA942"
+                android:centerColor="#20DEA942"
                 android:endColor="#0015110E" />
         </shape>
     </item>
