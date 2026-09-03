@@ -36,10 +36,16 @@ public class MainActivity extends Activity {
      * lowest required version of Total Launcher
      */
     private static final int minVersion = 10100;
+  
 
       @Override
       protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
+      
+          getWindow().setFlags(
+                  android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                  android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
+          );
       
           getWindow().getDecorView().setSystemUiVisibility(
                   View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -62,6 +68,7 @@ public class MainActivity extends Activity {
           });
       }
 
+  
     private void applyTheme() {
         boolean applicable;
 
