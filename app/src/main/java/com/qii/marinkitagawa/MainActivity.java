@@ -46,7 +46,12 @@ public class MainActivity extends Activity {
                   android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN,
                   android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
           );
-      
+          
+          getWindow().setFlags(
+                  android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                  android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+          );
+          
           getWindow().getDecorView().setSystemUiVisibility(
                   View.SYSTEM_UI_FLAG_FULLSCREEN
                   | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
